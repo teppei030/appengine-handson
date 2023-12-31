@@ -1,0 +1,12 @@
+runtime: nodejs18
+
+instance_class: F1
+
+handlers:
+  - url: /_nuxt
+    static_dir: .nuxt/dist/client/_nuxt
+    secure: always
+
+  - url: /.*
+    script: auto
+    secure: always
