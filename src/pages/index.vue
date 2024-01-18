@@ -1,3 +1,6 @@
+<script setup>
+  const {data} = useFetch('/api/item')
+</script>
 <template>
   <div>
     <header>
@@ -14,7 +17,7 @@
     <!-- ファーストビュー部分 -->
     <div class="first-view">
         <h2>ようこそ、サンプルサイトへ</h2>
-        <p>{ここにアイテムを表示します。}</p>
+        <p>{{data}}</p>
     </div>
 
     <!-- フッター部分 -->
