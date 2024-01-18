@@ -1,0 +1,21 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: simpleapp-mysql-container
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: simple
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - simpleapp-mysql-db:/var/lib/mysql
+      - ./_docker/database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  simpleapp-mysql-db:
+    driver: local
