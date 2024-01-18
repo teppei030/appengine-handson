@@ -18,7 +18,7 @@ async function executeQuery(sql) {
       database: 'simple',
     });
     const conn = await pool.getConnection();
-    const [result] = await conn.query(`SELECT NOW();`);
+    const [result] = await conn.query(sql);
     console.table(result); // prints returned time value from server
     await pool.end();
     connector.close();
