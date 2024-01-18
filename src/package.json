@@ -14,5 +14,10 @@
     "nuxt": "^3.9.0",
     "vue": "^3.4.0",
     "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@google-cloud/cloud-sql-connector": "^1.2.2",
+    "@nuxt/vite-builder": "^3.9.3",
+    "mysql2": "^3.7.1"
   }
 }
